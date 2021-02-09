@@ -1,3 +1,9 @@
+/*
+ * Kabrina Brady
+ * CIS 171 - Spring 2021
+ * 2/9/2021
+ */
+
 package view;
 
 import controller.AnimalRescueHelper;
