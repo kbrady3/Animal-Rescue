@@ -5,9 +5,9 @@
 		<class>model.AnimalRescue</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/animalrescuedb"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://cis175.cad2fmvb4ptt.us-east-1.rds.amazonaws.com/animalrescuedb"/>
 			<property name="javax.persistence.jdbc.user" value="admin"/>
-			<property name="javax.persistence.jdbc.password" value="Java2021--!"/>
+			<property name="javax.persistence.jdbc.password" value=""/>
 		</properties>
 	</persistence-unit>
 </persistence>
