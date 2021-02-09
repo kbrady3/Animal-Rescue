@@ -32,9 +32,8 @@ public class StartProgram {
     }
 
     private static void editAnItem() {
-        System.out.println("How would you like to search? ");
-        System.out.println("1 : Search by Animal's Name");
-        System.out.println("2 : Search by Animal Type");
+        System.out.println("1: Search by Animal's Name");
+        System.out.println("2: Search by Animal Type");
         int searchBy = in.nextInt();
         in.nextLine();
         List<AnimalRescue> foundItems;
@@ -49,26 +48,25 @@ public class StartProgram {
         }
 
         if (!foundItems.isEmpty()) {
-            System.out.println("Found Results.");
             for (AnimalRescue l : foundItems) {
                 System.out.println(l.getId() + " : " + l.returnAnimalDetails());
             }
-            System.out.print("Which ID to edit: ");
+            System.out.print("Select the ID of the animal to edit: ");
             int idToEdit = in.nextInt();
 
             AnimalRescue toEdit = lih.searchForItemById(idToEdit);
             System.out.println("Retrieved " + toEdit.getAnimalType() + " from " + toEdit.getanimalName());
-            System.out.println("1 : Update Animal Name");
-            System.out.println("2 : Update Animal Type");
+            System.out.println("1: Update Animal Name");
+            System.out.println("2: Update Animal Type");
             int update = in.nextInt();
             in.nextLine();
 
             if (update == 1) {
-                System.out.print("New Store: ");
+                System.out.print("New Animal Name: ");
                 String newAnimalName = in.nextLine();
                 toEdit.setanimalName(newAnimalName);
             } else if (update == 2) {
-                System.out.print("New Item: ");
+                System.out.print("New Animal Type: ");
                 String newAnimalType = in.nextLine();
                 toEdit.setAnimalType(newAnimalType);
             }
@@ -76,7 +74,7 @@ public class StartProgram {
             lih.updateItem(toEdit);
 
         } else {
-            System.out.println("---- No results found");
+            System.out.println("No results found");
         }
     }
 
@@ -86,15 +84,15 @@ public class StartProgram {
 
     public static void runMenu() {
         boolean goAgain = true;
-        System.out.println("--- Adopt your new furry best friend! ---");
+        System.out.println("Adopt your new furry best friend!");
         while (goAgain) {
-            System.out.println("*  Select an animal type:");
-            System.out.println("*  1 -- Add a type");
-            System.out.println("*  2 -- Edit a type");
-            System.out.println("*  3 -- Delete an item");
-            System.out.println("*  4 -- View the list");
-            System.out.println("*  5 -- Exit the awesome program");
-            System.out.print("*  Your selection: ");
+            System.out.println("Select an action:");
+            System.out.println("1: Add a type");
+            System.out.println("2: Edit a type");
+            System.out.println("3: Delete an item");
+            System.out.println("4: View the list");
+            System.out.println("5: Exit the program");
+            System.out.print("Your selection: ");
             int selection = in.nextInt();
             in.nextLine();
 
@@ -108,7 +106,7 @@ public class StartProgram {
                 viewTheList();
             } else {
                 lih.cleanUp();
-                System.out.println("   Goodbye!   ");
+                System.out.println("Exiting program");
                 goAgain = false;
             }
         }
