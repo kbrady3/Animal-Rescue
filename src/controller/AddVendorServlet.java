@@ -8,34 +8,40 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.AnimalRescue;
+import model.Vendor;
 
 /**
- * Servlet implementation class AddAnimalServlet
+ * Servlet implementation class AddVendorServlet
  */
-@WebServlet("/addAnimalServlet")
-public class AddAnimalServlet extends HttpServlet {
+@WebServlet("/addVendorServlet")
+public class AddVendorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public AddAnimalServlet() {
+    public AddVendorServlet() {
+        super();
         // TODO Auto-generated constructor stub
     }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
-		String animalName = request.getParameter("animalName");
-		String animalType = request.getParameter("animalType");
-		String vendor = request.getParameter("vendorId");
-		int vendorId = Integer.parseInt(vendor);
-		AnimalRescue a = new AnimalRescue(animalName, animalType, vendorId);
-		AnimalRescueHelper ah = new AnimalRescueHelper();
-		ah.insertItem(a);
+		String vendorName = request.getParameter("vendorName");
+		Vendor v = new Vendor(vendorName);
+		VendorHelper vh = new VendorHelper();
+		vh.insertItem(v);
 		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 	}
 

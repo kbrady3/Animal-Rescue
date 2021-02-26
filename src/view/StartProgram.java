@@ -22,8 +22,10 @@ public class StartProgram {
         String animalName = in.nextLine();
         System.out.print("Enter an animal type: ");
         String animalType = in.nextLine();
+        System.out.println("Enter the vendor ID: ");
+        int vendorId = in.nextInt();
 
-        AnimalRescue toAdd = new AnimalRescue(animalName, animalType);
+        AnimalRescue toAdd = new AnimalRescue(animalName, animalType, vendorId);
         lih.insertItem(toAdd);
     }
 
@@ -32,8 +34,10 @@ public class StartProgram {
         String animalName = in.nextLine();
         System.out.print("Enter the animal type to delete: ");
         String animalType = in.nextLine();
+        System.out.println("Enter the vendor ID to delete: ");
+        int vendorId = in.nextInt();
 
-        AnimalRescue toDelete = new AnimalRescue(animalName, animalType);
+        AnimalRescue toDelete = new AnimalRescue(animalName, animalType, vendorId);
         lih.deleteItem(toDelete);
     }
 

@@ -9,8 +9,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 public class AnimalRescueHelper {
-    static EntityManagerFactory emfactory =
-            Persistence.createEntityManagerFactory("AnimalRescue");
+    static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("AnimalRescue");
 
     public void insertItem(AnimalRescue li){
         EntityManager em = emfactory.createEntityManager();

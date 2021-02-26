@@ -3,6 +3,7 @@
 	<persistence-unit name="AnimalRescue" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>model.AnimalRescue</class>
+		<class>model.Vendor</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://cis175.cad2fmvb4ptt.us-east-1.rds.amazonaws.com/animalrescuedb"/>

@@ -2,17 +2,26 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Animal Rescue Home</title>
 </head>
 <body>
 
 	<form action = "addAnimalServlet" method="post">
+		<h2>Add Animal</h2>
 		Animal Name: <input type ="text" name = "animalName">
 		Animal Type: <input type = "text" name = "animalType">
+		Vendor ID: <input type = "text" name = "vendorId">
 		<input type = "submit" value="Add Animal">
 	</form> <br />
+	<form action = "addVendorServlet" method="post">
+		<h2>Add Animal Vendor:</h2>
+		Vendor: <input type ="text" name = "vendorName">
+		<input type = "submit" value="Add Vendor">
+	</form> <br />
 	
-	<a href = "viewAllAnimalsServlet">View the complete list</a>
+	<a href = "viewAllAnimalsServlet">View all animals</a>
+	<br>
+	<a href = "viewAllVendorsServlet">View all vendors</a>
 
 </body>
 </html>
