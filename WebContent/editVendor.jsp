@@ -9,11 +9,22 @@
 </head>
 <body>
 
-<form action = "editVendorServlet" method="post">
-Vendor Name: <input type ="text" name = "vendorName" value="${itemToEdit.vendorName}">
-<input type = "hidden" name = "id" value="${itemToEdit.id}">
-<input type = "submit" value="Save Edited Vendor">
+<form action = "editVendorServlet" method="post" onsubmit="return(validate())">
+	Vendor Name: <input type ="text" name = "vendorName" value="${itemToEdit.vendorName}" id="vName">
+	<input type = "hidden" name = "id" value="${itemToEdit.id}">
+	<input type = "submit" value="Save Edited Vendor">
 </form>
 
 </body>
+<script>
+function validate(){
+	var name = document.getElementById('vName');
+	
+	if(name.value == ""){
+		alert("Enter the vendor name.");
+		return false;
+	}
+	return true;
+}
+</script>
 </html>
