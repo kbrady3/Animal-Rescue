@@ -6,16 +6,16 @@
 </head>
 <body>
 
-	<form action = "addAnimalServlet" method="post">
+	<form action = "addAnimalServlet" method="post" id="animalForm" onsubmit="return(validateAnimal())">
 		<h2>Add Animal</h2>
-		Animal Name: <input type ="text" name = "animalName">
-		Animal Type: <input type = "text" name = "animalType">
-		Vendor ID: <input type = "text" name = "vendorId">
+		Animal Name: <input type ="text" name = "animalName" id="aName">
+		Animal Type: <input type = "text" name = "animalType" id="type">
+		Vendor ID: <input type = "text" name = "vendorId" id="vId">
 		<input type = "submit" value="Add Animal">
 	</form> <br />
-	<form action = "addVendorServlet" method="post">
+	<form action = "addVendorServlet" method="post" id="vendorForm" onsubmit="return(validateVendor())">
 		<h2>Add Animal Vendor:</h2>
-		Vendor: <input type ="text" name = "vendorName">
+		Vendor: <input type ="text" name = "vendorName" id="vName">
 		<input type = "submit" value="Add Vendor">
 	</form> <br />
 	
@@ -24,4 +24,36 @@
 	<a href = "viewAllVendorsServlet">View all vendors</a>
 
 </body>
+
+<script>
+	function validateAnimal(){
+		var name = document.getElementById('aName');
+		var type = document.getElementById('type');
+		var vendorId = document.getElementById('vId');
+		
+		if(name.value == ""){
+			alert("Enter the animal's name.");
+			return false;
+		}
+		if(type.value == ""){
+			alert("Enter the animal type.");
+			return false;
+		}
+		if(vendorId.value == ""){
+			alert("Enter the vendor ID.");
+			return false;
+		}
+		return true;
+	}
+	
+	function validateVendor(){
+		var name = document.getElementById('vName');
+		
+		if(name.value == ""){
+			alert("Enter the vendor name.");
+			return false;
+		}
+		return true;
+	}
+</script>
 </html>
